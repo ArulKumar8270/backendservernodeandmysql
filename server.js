@@ -12,6 +12,7 @@ app.use(cors());
 // api routes
 app.use('/users', require('./users/users.controller'));
 app.use('/blogs', require('./blogs/blog.controller'));
+app.use('/blogCategory', require('./blogs/blogCategory/category.controller'));
 
 // global error handler
 app.use(errorHandler);
