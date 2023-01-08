@@ -10,7 +10,7 @@ module.exports = {
 
 
 async function getAll() {
-    return await db.Blog.findAll();
+    return await db.BlogCategory.findAll();
 }
 
 async function getById(id) {
@@ -20,37 +20,37 @@ async function getById(id) {
 async function create(params) {
     console.log(params, "params")
     // save user
-    await db.Blog.create(params);
+    await db.BlogCategory.create(params);
 }
 
 
 
 async function update(id, params) {
-    const blog = await getblog(id);
+    const cate = await getblog(id);
     // validate
-    const blogameChanged = params.id && blog.id !== params.id;
-    if (blogameChanged && await db.Blog.findOne({ where: { id: params.id } })) {
+    const blogameChanged = params.id && cate.id !== params.id;
+    if (blogameChanged && await db.BlogCategory.findOne({ where: { id: params.id } })) {
         throw 'Username "' + params.id + '" is already taken';
     }
 
     // copy params to user and save
-    Object.assign(blog, params);
-    await blog.save();
+    Object.assign(cate, params);
+    await cate.save();
 
-    return blog.get();
+    return cate.get();
 }
 
 
 
 async function _delete(id) {
-    const blog = await getblog(id);
-    await blog.destroy();
+    const cate = await getblog(id);
+    await cate.destroy();
 }
 
 // helper functions
 
 async function getblog(id) {
-    const blog = await db.Blog.findByPk(id);
-    if (!blog) throw 'Blog not found';
-    return blog;
+    const cate = await db.BlogCategory.findByPk(id);
+    if (!cate) throw 'User not found';
+    return cate;
 }
