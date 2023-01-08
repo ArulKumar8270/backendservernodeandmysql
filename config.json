@@ -1,9 +1,9 @@
 ﻿{
     "database": {
-        "host": "localhost",
+        "host": "hpanel.hostinger.com",
         "port": 3306,
         "user": "root",
-        "password": "",
+        "password": "Supportnickname1@+",
         "database": "krosum"
     },
     "secret": "THIS IS USED TO SIGN AND VERIFY JWT TOKENS, REPLACE IT WITH YOUR OWN SECRET, IT CAN BE ANY STRING"
