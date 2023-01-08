@@ -1,7 +1,7 @@
 ﻿{
     "database": {
         "host": "hpanel.hostinger.com",
-        "port": 3306,
+        "port": 3306, 
         "user": "root",
         "password": "Supportnickname1@+",
         "database": "krosum"
